@@ -15,6 +15,7 @@ public class Client : MonoBehaviour
     public Slider cheeseToggle;
 
     public Canvas questionsUI;
+    public Text foodName;
 
     private DinnerRequirements requirements;
 
@@ -44,6 +45,7 @@ public class Client : MonoBehaviour
 
         DinnerFactory factory = new DinnerFactory(requirements);
         IDinner d = factory.Create();
+        foodName.text = d.ToString();
         GameObject.Instantiate(Resources.Load(d + "Prefab"));
     }
 }
