@@ -45,6 +45,7 @@ public class Client : MonoBehaviour
 
         DinnerFactory factory = new DinnerFactory(requirements);
         IDinner d = factory.Create();
+        foodName.gameObject.SetActive(true);
         foodName.text = d.ToString();
         GameObject.Instantiate(Resources.Load(d + "Prefab"));
     }
